@@ -40,6 +40,7 @@ export default function Home() {
       const data = await response.json();
       setResult(data.rephrased || 'エラーが発生しました');
     } catch (error) {
+      console.error('Rephrase error:', error);
       setResult('エラーが発生しました');
     } finally {
       setIsLoading(false);
